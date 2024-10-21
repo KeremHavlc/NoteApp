@@ -33,7 +33,7 @@ app.use("/api/notes" , notesRoutes);
 app.use("/api/users" , authRoutes);
 app.use("/api/profile" , usersRoutes);
 /*PORTU belirleme  */
-const PORT = 8000
+const PORT = procces.env.PORT || 8000
 /*Öylesine istek xd  */
 app.get("/" ,(req,res)=>{
     res.send("Hello World");

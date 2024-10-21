@@ -10,6 +10,7 @@ import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import AddNote from "./components/AddNote";
 import "./index.css";
+import NotFoundPage from "./pages/NotFoundPage";
 const App = () => {
   const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
@@ -75,6 +76,16 @@ const App = () => {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+      </Routes>
+      <Routes>
+        <Route
+          path="*"
+          element={
+            <RouteControl>
+              <NotFoundPage />
+            </RouteControl>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
